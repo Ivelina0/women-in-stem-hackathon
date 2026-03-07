@@ -1,6 +1,14 @@
 :root {
   --bg: #fff9f2;
   --ink: #3d2b56;
+  --brand-pink: #FE9EC7;
+  --brand-yellow: #F9F6C4;
+  --brand-sky: #89D4FF;
+  --brand-blue: #44ACFF;
+  --brand-red: #EB4C4C;
+  --brand-coral: #FF7070;
+  --brand-blush: #FFA6A6;
+  --brand-cream: #FFEDC7;
   --pink: #ffd7e7;
   --lavender: #e6ddff;
   --mint: #d7f7e7;
@@ -44,6 +52,47 @@ body {
 .wrapper {
   width: min(1100px, 92vw);
   margin-inline: auto;
+}
+
+/* Shared nav styles for all pages */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(4px);
+  background: rgba(255, 249, 242, 0.78);
+  border-bottom: 2px dashed #c9bbdb;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0;
+}
+
+.nav-pill {
+  text-decoration: none;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid #6a567f;
+  border-radius: 999px;
+  padding: 0.38rem 1rem;
+  font-weight: 800;
+  box-shadow: 0 4px 0 rgba(106, 86, 127, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-pill:hover,
+.nav-pill:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(106, 86, 127, 0.28);
+  background: var(--brand-yellow);
+}
+
+.nav-pill.active {
+  background: var(--brand-pink);
 }
 
 .hero {
@@ -266,5 +315,182 @@ h1 {
 @media (max-width: 540px) {
   .countdown-grid {
     grid-template-columns: repeat(2, minmax(70px, 1fr));
+  }
+}
+
+/* -------------------------------------------
+   Projects page styles (scoped to body class)
+-------------------------------------------- */
+.projects-page main {
+  padding: 1.2rem 0 3rem;
+}
+
+.projects-intro {
+  background: linear-gradient(150deg, var(--brand-yellow), #fff);
+  margin-top: 0.4rem;
+}
+
+.projects-intro h1 {
+  margin-bottom: 0.4rem;
+}
+
+.projects-intro p {
+  margin-bottom: 0;
+  max-width: 62ch;
+}
+
+.cohort-selector {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.cohort-card {
+  border: 3px solid #5f5188;
+  border-radius: 22px;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: var(--ink);
+  box-shadow: var(--paper-shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.cohort-card:hover,
+.cohort-card:focus-visible {
+  transform: rotate(-1deg) translateY(-2px);
+}
+
+.cohort-card.selected {
+  box-shadow: 0 0 0 4px #fff, 0 0 0 7px #6a567f, var(--paper-shadow);
+}
+
+.kittens-card {
+  background: linear-gradient(135deg, var(--brand-yellow), #fff8d8);
+}
+
+.lionesses-card {
+  background: linear-gradient(135deg, var(--brand-sky), #e8f6ff);
+}
+
+.cohort-emoji {
+  display: block;
+  font-size: 2rem;
+}
+
+.cohort-title {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: "Patrick Hand", cursive;
+  font-size: 2rem;
+}
+
+.cohort-copy {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.projects-display {
+  background: #fff;
+}
+
+.pick-message {
+  margin: 0;
+  font-size: 1.06rem;
+  font-weight: 700;
+}
+
+.selection-tools {
+  margin-bottom: 1rem;
+}
+
+.selected-cohort-text {
+  margin: 0 0 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.switch-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.switch-btn {
+  border: 2px solid #6a567f;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+}
+
+.switch-btn:hover,
+.switch-btn:focus-visible {
+  background: #f4ecff;
+}
+
+.choose-again {
+  background: var(--brand-cream);
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  border-radius: 16px;
+  border: 2px solid #5f5188;
+  padding: 0.9rem;
+  box-shadow: 0 7px 0 rgba(95, 81, 136, 0.16);
+}
+
+.project-card h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-card p {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+}
+
+.kittens-tone {
+  background: linear-gradient(145deg, #fff7ca, #fff);
+}
+
+.lionesses-tone {
+  background: linear-gradient(145deg, #d8eeff, #f9fdff);
+}
+
+.build-your-own {
+  border-style: dashed;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag-row span {
+  border-radius: 999px;
+  border: 1.5px solid #7c6499;
+  background: #fff;
+  padding: 0.15rem 0.58rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .cohort-selector {
+    grid-template-columns: 1fr;
   }
 }
