@@ -32,13 +32,13 @@
     </section>
 
     <section class="cohort-selector" aria-label="Resource cohort selection">
-      <button class="cohort-card kittens-card" type="button" data-resource-cohort="kittens" aria-controls="kittens-resources">
+      <button id="kittens-btn" class="cohort-card kittens-card" type="button" data-resource-cohort="kittens" aria-controls="kittens-resources">
         <span class="cohort-emoji" aria-hidden="true">🐾</span>
         <span class="cohort-title">Kittens</span>
         <span class="cohort-copy">New to Python, notebooks, visualisation, or data analysis? Start here with friendly tools 💛</span>
       </button>
 
-      <button class="cohort-card lionesses-card" type="button" data-resource-cohort="lionesses" aria-controls="lionesses-resources">
+      <button id="lionesses-btn" class="cohort-card lionesses-card" type="button" data-resource-cohort="lionesses" aria-controls="lionesses-resources">
         <span class="cohort-emoji" aria-hidden="true">🦁</span>
         <span class="cohort-title">Lionesses</span>
         <span class="cohort-copy">Ready for stronger coding workflows, IDE power, and project structure? Dive in 💙</span>
@@ -55,7 +55,7 @@
         </div>
       </div>
 
-      <p class="pick-message" id="resource-pick-message">Choose a cohort above to reveal your resources!</p>
+      <p class="pick-message" id="resources-placeholder">Choose your cohort to reveal your resources</p>
 
       <div class="resource-gallery" id="kittens-resources" hidden>
         <article class="resource-card resource-kittens-tone">

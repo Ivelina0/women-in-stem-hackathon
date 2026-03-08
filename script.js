@@ -141,27 +141,31 @@ function initProjectsCohortPicker() {
 // Resources page: cohort selection logic
 // ----------------------------------------
 function initResourcesCohortPicker() {
-  const cohortButtons = document.querySelectorAll("[data-resource-cohort]");
+  const kittensBtn = document.getElementById("kittens-btn");
+  const lionessesBtn = document.getElementById("lionesses-btn");
   const switchButtons = document.querySelectorAll("[data-resource-switch]");
   const chooseAgainBtn = document.getElementById("resource-choose-again");
   const kittensResources = document.getElementById("kittens-resources");
   const lionessesResources = document.getElementById("lionesses-resources");
-  const pickMessage = document.getElementById("resource-pick-message");
+  const pickMessage = document.getElementById("resources-placeholder");
   const tools = document.getElementById("resource-selection-tools");
   const selectedText = document.getElementById("selected-resource-cohort-text");
   const helpCard = document.getElementById("shared-help-card");
 
   // If resources picker elements are not on this page, skip setup.
-  if (!cohortButtons.length || !kittensResources || !lionessesResources || !pickMessage || !tools || !selectedText || !helpCard) {
+  if (!kittensBtn || !lionessesBtn || !kittensResources || !lionessesResources || !pickMessage || !tools || !selectedText || !helpCard) {
     return;
   }
 
   function setSelectedButtonState(activeCohort) {
-    cohortButtons.forEach((button) => {
-      const isActive = button.dataset.resourceCohort === activeCohort;
-      button.classList.toggle("selected", isActive);
-      button.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
+    const kittensActive = activeCohort === "kittens";
+    const lionessesActive = activeCohort === "lionesses";
+
+    kittensBtn.classList.toggle("selected", kittensActive);
+    lionessesBtn.classList.toggle("selected", lionessesActive);
+
+    kittensBtn.setAttribute("aria-pressed", kittensActive ? "true" : "false");
+    lionessesBtn.setAttribute("aria-pressed", lionessesActive ? "true" : "false");
   }
 
   function showCohort(cohort) {
@@ -205,11 +209,14 @@ function initResourcesCohortPicker() {
     setSelectedButtonState(null);
   }
 
-  cohortButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      showCohort(button.dataset.resourceCohort);
-      document.getElementById("resources-display")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+  kittensBtn.addEventListener("click", () => {
+    showCohort("kittens");
+    document.getElementById("resources-display")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  lionessesBtn.addEventListener("click", () => {
+    showCohort("lionesses");
+    document.getElementById("resources-display")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   switchButtons.forEach((button) => {
