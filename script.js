@@ -150,10 +150,9 @@ function initResourcesCohortPicker() {
   const pickMessage = document.getElementById("resources-placeholder");
   const tools = document.getElementById("resource-selection-tools");
   const selectedText = document.getElementById("selected-resource-cohort-text");
-  const helpCard = document.getElementById("shared-help-card");
 
   // If resources picker elements are not on this page, skip setup.
-  if (!kittensBtn || !lionessesBtn || !kittensResources || !lionessesResources || !pickMessage || !tools || !selectedText || !helpCard) {
+  if (!kittensBtn || !lionessesBtn || !kittensResources || !lionessesResources || !pickMessage || !tools || !selectedText) {
     return;
   }
 
@@ -176,9 +175,6 @@ function initResourcesCohortPicker() {
     kittensResources.classList.toggle("is-hidden", !showKittens);
     lionessesResources.classList.toggle("is-hidden", showKittens);
 
-    helpCard.hidden = false;
-    helpCard.classList.remove("is-hidden");
-
     pickMessage.hidden = true;
     pickMessage.classList.add("is-hidden");
     tools.hidden = false;
@@ -196,9 +192,6 @@ function initResourcesCohortPicker() {
     lionessesResources.hidden = true;
     kittensResources.classList.add("is-hidden");
     lionessesResources.classList.add("is-hidden");
-
-    helpCard.hidden = true;
-    helpCard.classList.add("is-hidden");
 
     pickMessage.hidden = false;
     pickMessage.classList.remove("is-hidden");
