@@ -756,3 +756,96 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* -------------------------------------------
+   Resources page styles (scoped to body class)
+-------------------------------------------- */
+.resources-page main {
+  padding: 1.2rem 0 3rem;
+}
+
+.resources-page .is-hidden,
+.resources-page [hidden] {
+  display: none !important;
+}
+
+.resources-intro {
+  background: linear-gradient(150deg, #ffe8f4, #fff7ce);
+  margin-top: 0.4rem;
+}
+
+.resources-intro h1 {
+  margin-bottom: 0.4rem;
+}
+
+.resources-intro p {
+  margin-bottom: 0;
+  max-width: 62ch;
+}
+
+.resources-display {
+  background: #fff;
+}
+
+.resource-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.resource-card {
+  border-radius: 16px;
+  border: 2px solid #5f5188;
+  padding: 0.9rem;
+  box-shadow: 0 7px 0 rgba(95, 81, 136, 0.16);
+}
+
+.resource-card h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.resource-card p {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+}
+
+.resource-kittens-tone {
+  background: linear-gradient(145deg, #fff7ca, #fff);
+}
+
+.resource-lionesses-tone {
+  background: linear-gradient(145deg, #d8eeff, #f9fdff);
+}
+
+.resource-neutral-tone {
+  background: linear-gradient(145deg, #fff6ea, #fff0f7);
+  border-style: dashed;
+  border-color: #8b6a8f;
+}
+
+.help-card {
+  margin-top: 1rem;
+}
+
+.resource-btn {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.35rem 0.88rem;
+  border: 2px solid #5f5188;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.resource-btn:hover,
+.resource-btn:focus-visible {
+  background: var(--brand-yellow);
+}
+
+.resource-btn[aria-disabled="true"] {
+  background: #fffdf3;
+  cursor: default;
+}

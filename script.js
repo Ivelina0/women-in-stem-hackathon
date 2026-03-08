@@ -137,5 +137,93 @@ function initProjectsCohortPicker() {
   resetSelection();
 }
 
+// ----------------------------------------
+// Resources page: cohort selection logic
+// ----------------------------------------
+function initResourcesCohortPicker() {
+  const cohortButtons = document.querySelectorAll("[data-resource-cohort]");
+  const switchButtons = document.querySelectorAll("[data-resource-switch]");
+  const chooseAgainBtn = document.getElementById("resource-choose-again");
+  const kittensResources = document.getElementById("kittens-resources");
+  const lionessesResources = document.getElementById("lionesses-resources");
+  const pickMessage = document.getElementById("resource-pick-message");
+  const tools = document.getElementById("resource-selection-tools");
+  const selectedText = document.getElementById("selected-resource-cohort-text");
+  const helpCard = document.getElementById("shared-help-card");
+
+  // If resources picker elements are not on this page, skip setup.
+  if (!cohortButtons.length || !kittensResources || !lionessesResources || !pickMessage || !tools || !selectedText || !helpCard) {
+    return;
+  }
+
+  function setSelectedButtonState(activeCohort) {
+    cohortButtons.forEach((button) => {
+      const isActive = button.dataset.resourceCohort === activeCohort;
+      button.classList.toggle("selected", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
+  function showCohort(cohort) {
+    const showKittens = cohort === "kittens";
+
+    kittensResources.hidden = !showKittens;
+    lionessesResources.hidden = showKittens;
+    kittensResources.classList.toggle("is-hidden", !showKittens);
+    lionessesResources.classList.toggle("is-hidden", showKittens);
+
+    helpCard.hidden = false;
+    helpCard.classList.remove("is-hidden");
+
+    pickMessage.hidden = true;
+    pickMessage.classList.add("is-hidden");
+    tools.hidden = false;
+    tools.classList.remove("is-hidden");
+
+    setSelectedButtonState(cohort);
+
+    selectedText.textContent = showKittens
+      ? "Kittens toolkit unlocked 🐾 Start with easy, browser-friendly tools!"
+      : "Lionesses toolkit unlocked 🦁 Build with stronger coding workflows!";
+  }
+
+  function resetSelection() {
+    kittensResources.hidden = true;
+    lionessesResources.hidden = true;
+    kittensResources.classList.add("is-hidden");
+    lionessesResources.classList.add("is-hidden");
+
+    helpCard.hidden = true;
+    helpCard.classList.add("is-hidden");
+
+    pickMessage.hidden = false;
+    pickMessage.classList.remove("is-hidden");
+    tools.hidden = true;
+    tools.classList.add("is-hidden");
+
+    selectedText.textContent = "";
+    setSelectedButtonState(null);
+  }
+
+  cohortButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      showCohort(button.dataset.resourceCohort);
+      document.getElementById("resources-display")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  switchButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      showCohort(button.dataset.resourceSwitch);
+    });
+  });
+
+  chooseAgainBtn?.addEventListener("click", resetSelection);
+
+  // Guarantee initial state: prompt first, then show selected cohort only.
+  resetSelection();
+}
+
 initCountdown();
 initProjectsCohortPicker();
+initResourcesCohortPicker();

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources | International Women's Day Hackathon 2026</title>
+  <meta name="description" content="Choose your cohort and explore tools and learning resources for the hackathon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="resources-page">
+  <div class="paper-texture" aria-hidden="true"></div>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="wrapper nav-inner">
+      <a class="nav-pill" href="index.html">Home</a>
+      <a class="nav-pill" href="projects.html">Projects</a>
+      <a class="nav-pill active" href="resources.html" aria-current="page">Resources</a>
+    </div>
+  </nav>
+
+  <main class="wrapper">
+    <section class="resources-intro sticker" aria-labelledby="resources-title">
+      <p class="eyebrow">Pick your level first 🧰</p>
+      <h1 id="resources-title">Choose Your Toolkit</h1>
+      <p>
+        Select your cohort to see the most useful tools for your current experience level.
+        You can switch between cohorts any time while exploring.
+      </p>
+    </section>
+
+    <section class="cohort-selector" aria-label="Resource cohort selection">
+      <button class="cohort-card kittens-card" type="button" data-resource-cohort="kittens" aria-controls="kittens-resources">
+        <span class="cohort-emoji" aria-hidden="true">🐾</span>
+        <span class="cohort-title">Kittens</span>
+        <span class="cohort-copy">New to Python, notebooks, visualisation, or data analysis? Start here with friendly tools 💛</span>
+      </button>
+
+      <button class="cohort-card lionesses-card" type="button" data-resource-cohort="lionesses" aria-controls="lionesses-resources">
+        <span class="cohort-emoji" aria-hidden="true">🦁</span>
+        <span class="cohort-title">Lionesses</span>
+        <span class="cohort-copy">Ready for stronger coding workflows, IDE power, and project structure? Dive in 💙</span>
+      </button>
+    </section>
+
+    <section class="resources-display sticker" id="resources-display" aria-live="polite">
+      <div class="selection-tools" id="resource-selection-tools" hidden>
+        <p id="selected-resource-cohort-text" class="selected-cohort-text"></p>
+        <div class="switch-buttons" role="group" aria-label="Switch resource cohort">
+          <button type="button" class="switch-btn" data-resource-switch="kittens">Show Kittens</button>
+          <button type="button" class="switch-btn" data-resource-switch="lionesses">Show Lionesses</button>
+          <button type="button" class="switch-btn choose-again" id="resource-choose-again">Choose Again</button>
+        </div>
+      </div>
+
+      <p class="pick-message" id="resource-pick-message">Choose a cohort above to reveal your resources!</p>
+
+      <div class="resource-gallery" id="kittens-resources" hidden>
+        <article class="resource-card resource-kittens-tone">
+          <h2>Google Colab</h2>
+          <p>Run Python notebooks in your browser with no installation needed. Great for a quick, easy start.</p>
+          <div class="tag-row"><span>Beginner-friendly</span><span>No setup needed</span><span>Browser-based</span><span>Notebook-friendly</span></div>
+          <a class="resource-btn" href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Try this tool</a>
+        </article>
+
+        <article class="resource-card resource-kittens-tone">
+          <h2>Jupyter Notebooks</h2>
+          <p>Mix code, notes, and results in one place. Perfect for learning, experimenting, and explaining your work.</p>
+          <div class="tag-row"><span>Easy start</span><span>Python basics</span><span>Notebook-friendly</span></div>
+          <a class="resource-btn" href="https://jupyter.org/" target="_blank" rel="noopener noreferrer">Learn more</a>
+        </article>
+
+        <article class="resource-card resource-kittens-tone">
+          <h2>Python Basics (Official Tutorial)</h2>
+          <p>Learn core Python syntax, loops, functions, and data structures with simple examples.</p>
+          <div class="tag-row"><span>Python basics</span><span>Beginner-friendly</span><span>Easy start</span></div>
+          <a class="resource-btn" href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener noreferrer">Open resource</a>
+        </article>
+
+        <article class="resource-card resource-kittens-tone">
+          <h2>Plotly Express</h2>
+          <p>Create colourful charts quickly from dataframes. Great for beginner data visualisation.</p>
+          <div class="tag-row"><span>Data visualisation</span><span>Notebook-friendly</span><span>Beginner-friendly</span></div>
+          <a class="resource-btn" href="https://plotly.com/python/plotly-express/" target="_blank" rel="noopener noreferrer">Try this tool</a>
+        </article>
+
+        <article class="resource-card resource-kittens-tone">
+          <h2>Pandas Getting Started</h2>
+          <p>Learn to load, clean, and explore tabular data with practical examples.</p>
+          <div class="tag-row"><span>Simple data analysis</span><span>Python basics</span><span>Easy start</span></div>
+          <a class="resource-btn" href="https://pandas.pydata.org/docs/getting_started/index.html" target="_blank" rel="noopener noreferrer">Open resource</a>
+        </article>
+
+        <article class="resource-card resource-kittens-tone">
+          <h2>Gemini in Google Colab</h2>
+          <p>Use AI help while coding in notebooks. Great for debugging, ideas, and quick explanations.</p>
+          <div class="tag-row"><span>Beginner-friendly</span><span>Browser-based</span><span>Productivity</span></div>
+          <a class="resource-btn" href="https://colab.google/" target="_blank" rel="noopener noreferrer">Learn more</a>
+        </article>
+
+        <article class="resource-card resource-kittens-tone">
+          <h2>GitHub Hello World</h2>
+          <p>A gentle first step into repositories, commits, and pull requests.</p>
+          <div class="tag-row"><span>Beginner-friendly</span><span>GitHub</span><span>Easy start</span></div>
+          <a class="resource-btn" href="https://docs.github.com/en/get-started/start-your-journey/hello-world" target="_blank" rel="noopener noreferrer">Open resource</a>
+        </article>
+      </div>
+
+      <div class="resource-gallery" id="lionesses-resources" hidden>
+        <article class="resource-card resource-lionesses-tone">
+          <h2>Visual Studio Code</h2>
+          <p>Build and manage projects with extensions, integrated terminals, and debugging tools.</p>
+          <div class="tag-row"><span>IDE</span><span>Coding setup</span><span>Productivity</span></div>
+          <a class="resource-btn" href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Try this tool</a>
+        </article>
+
+        <article class="resource-card resource-lionesses-tone">
+          <h2>Git + GitHub Workflow</h2>
+          <p>Track changes, collaborate, and ship team work cleanly with branches and pull requests.</p>
+          <div class="tag-row"><span>Version control</span><span>GitHub</span><span>Advanced workflow</span></div>
+          <a class="resource-btn" href="https://docs.github.com/en/get-started/using-git/about-git" target="_blank" rel="noopener noreferrer">Open resource</a>
+        </article>
+
+        <article class="resource-card resource-lionesses-tone">
+          <h2>Terminal / Command Line Basics</h2>
+          <p>Speed up project tasks with command line navigation, scripts, and tooling.</p>
+          <div class="tag-row"><span>CLI</span><span>Productivity</span><span>Coding setup</span></div>
+          <a class="resource-btn" href="https://www.codecademy.com/learn/learn-the-command-line" target="_blank" rel="noopener noreferrer">Learn more</a>
+        </article>
+
+        <article class="resource-card resource-lionesses-tone">
+          <h2>Python Virtual Environments</h2>
+          <p>Keep dependencies organised per project using `venv` so setups stay clean and reproducible.</p>
+          <div class="tag-row"><span>Advanced workflow</span><span>Project structure</span><span>Coding setup</span></div>
+          <a class="resource-btn" href="https://docs.python.org/3/library/venv.html" target="_blank" rel="noopener noreferrer">Open resource</a>
+        </article>
+
+        <article class="resource-card resource-lionesses-tone">
+          <h2>Advanced Python Project Layout</h2>
+          <p>Structure your repository with clear folders, reusable modules, and tests.</p>
+          <div class="tag-row"><span>Project structure</span><span>Advanced workflow</span><span>Productivity</span></div>
+          <a class="resource-btn" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/" target="_blank" rel="noopener noreferrer">Learn more</a>
+        </article>
+
+        <article class="resource-card resource-lionesses-tone">
+          <h2>Codex / CLI Workflows</h2>
+          <p>Use terminal-first workflows to iterate fast on coding tasks and project maintenance.</p>
+          <div class="tag-row"><span>CLI</span><span>Advanced workflow</span><span>Productivity</span></div>
+          <a class="resource-btn" href="https://platform.openai.com/docs" target="_blank" rel="noopener noreferrer">Try this tool</a>
+        </article>
+
+        <article class="resource-card resource-lionesses-tone">
+          <h2>Advanced Visualisation Stack</h2>
+          <p>Create richer dashboards and exploratory charts with Plotly and Seaborn workflows.</p>
+          <div class="tag-row"><span>Visualisation</span><span>Advanced workflow</span><span>Coding setup</span></div>
+          <a class="resource-btn" href="https://seaborn.pydata.org/" target="_blank" rel="noopener noreferrer">Open resource</a>
+        </article>
+      </div>
+
+      <article class="resource-card resource-neutral-tone help-card" id="shared-help-card" hidden>
+        <h2>Need a hand getting started?</h2>
+        <p>
+          Not sure which setup to use yet? Ask an organiser or mentor and we’ll help you pick the smoothest path.
+          You are absolutely not expected to figure everything out alone.
+        </p>
+        <div class="tag-row"><span>Support</span><span>All levels</span><span>Friendly help</span></div>
+        <a class="resource-btn" href="#" aria-disabled="true">Ask for help</a>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
